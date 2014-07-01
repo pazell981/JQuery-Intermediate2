@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Intermediate 2</title>
+		<meta name="description" content="JQUERY Assignment -06/30/14 - Intermediate 2">
+		<link rel="stylesheet" type="text/css" href="css.css">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('form').submit(function(){
+					var $fname = $('#fn').attr('value');
+					var $lname = $('#ln').attr('value');
+					var $email = $('#em').attr('value');
+					var $cnum = $('#cn').attr('value');
+					$('#Target').append(
+						'<tr><td>' + $fname + 
+						'</td><td>' + $lname + 
+						'</td><td>' + $email + 
+						'</td><td>' + $cnum + 
+						'</td></tr>'
+					);
+					return false;
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="container">
+				<div id="userTable">
+					<h1>User List</h1>
+					<table>
+						<thead>
+							<tr>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Email Address</th>
+								<th>Contact Number</th>
+							</tr>
+						</thead>
+						<tbody id="Target">
+						</tbody>
+					</table>
+				</div>
+				<div id="userAdd">
+					<h1>Add a User</h1>
+					<form>
+						<label>First Name: <input type="text" value="First Name" id='fn'></label>
+						<label>Last Name: <input type="text" value="Last Name" id='ln'></label>
+						<label>Email Address: <input type="text" value="Email Address" id='em'></label>
+						<label>Contact Number: <input type="text" value="Phone Number" id='cn'></label>
+						<input type="submit" value="Submit" id="submit">
+					</form>
+				</div>
+			</div><!-- container -->
+		</div><!-- wrapper -->
+	</body>
+</html>
